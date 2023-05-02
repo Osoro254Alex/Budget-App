@@ -1,0 +1,29 @@
+<div class="">
+  <div class="">
+    <div class="">
+      <%= render "shared/header" %>
+      <span class="">categories</span>
+      <%= button_to "", class: "" do %>
+        <i class=""></i>
+      <% end %>
+    </div>
+    <ul class="">
+      <% @groups.each do |group| %>  
+        <li class="">
+          <%= link_to group_expenses_path(group), class: "" do %>
+          <div class="">
+            <%= image_tag url_for(group.icon), alt: group.name, class: "" %>
+            <div class="">
+              <span class=""><%= group.name %></span>
+              <span class=""><%= number_to_currency(group.total_amount) %></span>
+            </div>
+          </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="">
+    <%= link_to "Add new category", new_group_path, class: "" %>
+  </div>
+</div>
