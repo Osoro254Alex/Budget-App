@@ -3,9 +3,9 @@ class ExpensesController < ApplicationController
     @group = Group.find(params[:group_id])
     @group_expenses = @group.group_expenses
     @expenses = Expense.joins(:group_expenses, :groups)
-                  .where('expenses.id = group_expenses.expense_id')
-                  .where('groups.id = group_expenses.group_id')
-                  .where('groups.id = ?', params[:group_id]).order('expenses.created_at DESC')
+      .where('expenses.id = group_expenses.expense_id')
+      .where('groups.id = group_expenses.group_id')
+      .where('groups.id = ?', params[:group_id]).order('expenses.created_at DESC')
   end
 
   def new
@@ -32,5 +32,4 @@ class ExpensesController < ApplicationController
   def expense_params
     params.require(:expense).permit(:name, :amount, :author_id)
   end
-
 end
