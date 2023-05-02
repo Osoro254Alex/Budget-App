@@ -1,0 +1,33 @@
+<div class="container d-flex flex-column justify-content-between vh-100 bg-light px-0">
+  <div class="flex-1 m-0">
+    <div class="d-flex justify-content-between align-items-center header">
+      <%= link_to groups_path do %>
+        <span class="bi bi-arrow-left" style="font-size:24px;"></span>
+      <% end %>
+      <span style="font-size:20px;">TRANSACTIONS</span>
+      <%= button_to "", class: "btn btn-small btn-outline text-white" do %>
+        <i class="bi bi-search"></i>
+      <% end %>
+    </div>
+    <div class="d-flex justify-content-between align-items-center shadow-sm bg-white w-100 p-2 gap-2">
+      <%= image_tag url_for(@group.icon), alt: @group.name, class: "icon object-fit-fill rounded-0 float-left" %>
+      <div class="d-flex flex-1 justify-content-between w-100 py-1 gap-2">
+        <span class="align-middle"><%= @group.name %></span>
+        <span class="align-middle"><%= number_to_currency(@group.total_amount) %></span>
+      </div>
+    </div>
+    <ul class="list-group rounded-0 px-3 mt-3">
+      <% @expenses.each do |expense| %>
+        <li class="list-group-item shadow-sm justify-content-between align-items-center mb-3">
+          <div class="d-flex justify-content-between align-items-center w-100 py-1 gap-2">
+            <span class="flex-1 align-middle"><%= expense.name %></span>
+            <span class="align-middle"><%= number_to_currency(expense.amount) %></span>
+          </div>
+        </li>
+      <% end %>
+    </ul> 
+  </div>
+  <div class="btn-color text-white rounded-0 m-0 p-3">
+    <%= link_to "Add new transaction", new_group_expense_path(@group), class:  "btn btn-light btn-color text-white rounded-0 w-100 py-2 m-0 " %>
+  </div>
+</div>

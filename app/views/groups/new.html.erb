@@ -1,0 +1,18 @@
+<div id='splash' class="">
+  <%= form_for @group do |f| %>
+    <div class="">
+      <%= link_to groups_path do %>
+        <span class="" style=""></span>
+      <% end %>
+      <span class="">New Category</span>
+      <%= f.submit "Save", class: "btn text-white border-0" %>  
+    </div>
+    <fieldset class="mb-3">
+      <%= f.text_field :name, placeholder: "Category Name", required: true, class: "" %>
+    <%= f.label :add_icon, class: "form-control rounded-0" %>
+    <%= f.file_field :icon, required: true, class: "form-control rounded-0" %>
+    <%= f.hidden_field :author_id, value: current_user.id %>
+  </div>
+    </fieldset>
+  <% end %>
+</div>
