@@ -1,33 +1,40 @@
-<div class="container d-flex flex-column justify-content-between vh-100 bg-light px-0">
+<div class="container flex flex-col justify-between h-screen bg-slate-100 px-0">
   <div class="flex-1 m-0">
-    <div class="d-flex justify-content-between align-items-center header">
+    <div class="flex justify-between items-center bg-blue py-4 px-3">
       <%= link_to groups_path do %>
-        <span class="bi bi-arrow-left" style="font-size:24px;"></span>
+        <span class="text-white" style="font-size:24px;">&#10229;</span>
       <% end %>
-      <span style="font-size:20px;">TRANSACTIONS</span>
-      <%= button_to "", class: "btn btn-small btn-outline text-white" do %>
-        <i class="bi bi-search"></i>
+      <span class="uppercase text-white font-medium">TRANSACTIONS</span>
+      <%= button_to "", class: "bg-blue focus:border-white" do %>
+        <i class="fas fa-search text-white p-2" style="font-size:24px;"></i>
       <% end %>
     </div>
-    <div class="d-flex justify-content-between align-items-center shadow-sm bg-white w-100 p-2 gap-2">
-      <%= image_tag url_for(@group.icon), alt: @group.name, class: "icon object-fit-fill rounded-0 float-left" %>
-      <div class="d-flex flex-1 justify-content-between w-100 py-1 gap-2">
-        <span class="align-middle"><%= @group.name %></span>
-        <span class="align-middle"><%= number_to_currency(@group.total_amount) %></span>
+    <div class="list-group-item shadow-sm justify-between items-center mb-3">
+      <div class="flex justify-start px-3 gap-2">
+        <%= image_tag url_for(@group.icon),
+        alt: @group.name,
+        class: "object-fit-fill rounded-0 float-left h-16 w-16" %>
+        <div class="flex flex-1 justify-between w-full py-4 px-1">
+          <span class="items-center font-medium"><%= @group.name %></span>
+          <span class="items-center font-medium"><%= number_to_currency(@group.total_amount) %></span>
+        </div>
       </div>
     </div>
     <ul class="list-group rounded-0 px-3 mt-3">
       <% @expenses.each do |expense| %>
-        <li class="list-group-item shadow-sm justify-content-between align-items-center mb-3">
-          <div class="d-flex justify-content-between align-items-center w-100 py-1 gap-2">
-            <span class="flex-1 align-middle"><%= expense.name %></span>
-            <span class="align-middle"><%= number_to_currency(expense.amount) %></span>
+        <li class="list-group-item bg-white drop-shadow-lg justify-between items-center mb-3">
+          <div class="flex justify-between items-center bg-white w-full p-4 gap-4">
+            <span class="flex-1 text-left"><%= expense.name %></span>
+            <span class="text-right"><%= number_to_currency(expense.amount) %></span>
           </div>
         </li>
       <% end %>
-    </ul> 
+    </ul>
   </div>
-  <div class="btn-color text-white rounded-0 m-0 p-3">
-    <%= link_to "Add new transaction", new_group_expense_path(@group), class:  "btn btn-light btn-color text-white rounded-0 w-100 py-2 m-0 " %>
+  <div class="w-full flex bg-bubble text-white rounded-0 m-0 p-4">
+    <%= link_to "Add New Transaction",
+    new_group_expense_path(@group),
+    class:
+      "bg-bubble font-medium text-center border border-white flex-1 text-white rounded-0  py-2 m-0" %>
   </div>
 </div>

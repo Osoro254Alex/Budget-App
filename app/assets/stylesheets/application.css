@@ -15,10 +15,18 @@
  */
 .notice {
   background-color: #0bf10b;
-  color: #fff;
+  color: #eee;
   width: 20%;
   margin: auto;
   border-radius: 1rem;
+  text-align: center;
+}
+
+#group {
+  padding: 0.2rem;
+  border-radius: 0.4rem;
+  outline: none;
+  text-decoration: none;
 }
 
 .alert {
@@ -27,4 +35,5 @@
   width: 20%;
   margin: auto;
   border-radius: 1rem;
+  text-align: center;
 }

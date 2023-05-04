@@ -7,15 +7,36 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <main>
-      <%= yield %>
+  <body class="w-full m-0">
+    <%# <p class="notice"><%= notice</p> %>
+    <%# <p class="alert"><%= alert</p>   %>
+    <main class="lg:w-3/5 md:w-4/5 sm:w-full mx-auto">
+      <div class="container">
+        <%= yield %>
+      </div>
     </main>
+    <script>
+      const dropdownMenuButton = document.getElementById('dropdownMenuButton1');
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      dropdownMenuButton.addEventListener('click', function(event) {
+
+        let targetElement = event.target;
+
+        if (dropdownMenu.classList.contains('hidden') && targetElement !== dropdownMenuButton) {
+          dropdownMenu.classList.remove('hidden');
+        } else if (!dropdownMenu.classList.contains('hidden') && !dropdownMenu.contains(targetElement)) {
+          dropdownMenu.classList.add('hidden');
+        }
+
+        dropdownMenuButton.removeEventListener('click', arguments.callee);
+        dropdownMenuButton.addEventListener('click', arguments.callee);
+
+      });
+    </script>
   </body>
 </html>

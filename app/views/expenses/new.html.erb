@@ -1,20 +1,19 @@
 <div class="container d-flex flex-column justify-content-between vh-100 bg-light px-0">  
   <%= form_with url: group_expenses_path, locale: true, method: :post  do |f| %>
-    <div class="d-flex justify-content-between align-items-center header">
+   <div class="flex justify-between items-center bg-blue py-4 px-2">
       <%= link_to group_expenses_path do %>
-        <span class="bi bi-arrow-left" style="font-size:24px;"></span>
+        <span class="text-white" style="font-size:24px;">&#10229;</span>
       <% end %>
-      <span class="text-uppercase">New Transaction</span>
-      <%= f.submit "Save", class: "btn text-white border-0" %>  
+      <span class="uppercase text-white">New Transaction</span>
+      <%= f.submit "Save", class: "text-white p-1 font-semibold" %>  
     </div>
-
-    <fieldset class="mb-3">
+    <fieldset class="flex flex-col">
       <%= f.text_field :name, placeholder: "Name", required: true, class: "form-control rounded-0 shadow-none" %>
       <%= f.number_field :amount, placeholder: "Amount", required: true, class: "form-control rounded-0 shadow-none" %>
-      <div class= "form-control rounded-0 shadow-none gap-2">
-      <%= f.label :group %>
-        <%= f.select :group, current_user.groups.map { |c| [c.name, c.id] }, required: true, class: "border-0" %>
-      <div>
+      <div class= "form-control rounded-0 px-3 py-2 shadow-none w-full border border-current gap-2">
+      <%= f.label :Category %>
+        <%= f.select :group, current_user.groups.map { |category| [category.name, category.id] }, required: true, class: ""%>
+      </div>
       <%= f.hidden_field :author_id, value: current_user.id %>
     </fieldset>
   <% end %>  

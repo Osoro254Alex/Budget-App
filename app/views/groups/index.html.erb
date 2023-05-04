@@ -1,21 +1,24 @@
-<div class="">
-  <div class="">
-    <div class="">
-      <%= render "shared/header" %>
-      <span class="">categories</span>
-      <%= button_to "", class: "" do %>
-        <i class=""></i>
+<div class="container flex flex-col justify-between h-screen bg-slate-100 px-0">
+  <div class="relative basis-1 m-0">
+    <div class="flex justify-between items-center bg-blue py-4 px-4">
+       <%= render "shared/header" %>
+      <span class="uppercase text-white font-medium">categories</span>
+      <%= button_to "", class: "bg-blue focus:border-white" do %>
+        <i class="fas fa-search text-white p-2" style="font-size:24px;"></i>
       <% end %>
     </div>
-    <ul class="">
+    <ul class="list-group flex flex-col bg-slate-100 gap-y-4 p-4 rounded-0">
       <% @groups.each do |group| %>  
-        <li class="">
-          <%= link_to group_expenses_path(group), class: "" do %>
-          <div class="">
-            <%= image_tag url_for(group.icon), alt: group.name, class: "" %>
-            <div class="">
-              <span class=""><%= group.name %></span>
-              <span class=""><%= number_to_currency(group.total_amount) %></span>
+        <li class="list-group-item shadow-lg justify-between p-3 bg-white items-center">
+          <%= link_to group_expenses_path(group), class: "text-decoration-none" do %>
+          <div class="flex justify-start py-0 bg-white gap-2">
+           <img src="<%= url_for(group.icon) %>" alt="<%= group.name %>" class="object-fit-fill rounded-0 float-left h-16 w-16" />
+            <div class="flex flex-1 justify-between w-full px-1">
+              <div class="flex flex-col justify-between">
+                <span class="items-center text-blue font-medium"><%= group.name %></span>
+                <span><%= group.created_at.strftime("%d %b %Y") %></span>
+              </div>
+              <span class="items-center text-blue font-medium"><%= number_to_currency(group.total_amount) %></span>
             </div>
           </div>
           <% end %>
@@ -23,7 +26,7 @@
       <% end %>
     </ul>
   </div>
-  <div class="">
-    <%= link_to "Add new category", new_group_path, class: "" %>
-  </div>
+<div class="w-full flex bg-bubble text-white rounded-0 m-0 p-4">
+  <%= link_to "Add New Category", new_group_path, class: "bg-bubble font-medium text-center border border-white flex-1 text-white rounded-0  py-2 m-0" %>
+</div>
 </div>

@@ -1,16 +1,19 @@
-<div id='splash' class="">
+<div class="container d-flex flex-column justify-content-between vh-100 bg-light px-0">  
   <%= form_for @group do |f| %>
-    <div class="">
+   <div class="flex justify-between items-center bg-blue py-4 px-2">
       <%= link_to groups_path do %>
-        <span class="" style=""></span>
+        <span class="text-white" style="font-size:24px;">&#10229;</span>
       <% end %>
-      <span class="">New Category</span>
-      <%= f.submit "Save", class: "btn text-white border-0" %>  
+      <span class="uppercase text-white">New Category</span>
+       <%= f.submit "Save", class: "text-white p-1 font-semibold" %>  
     </div>
-    <fieldset class="mb-3">
-      <%= f.text_field :name, placeholder: "Category Name", required: true, class: "" %>
-    <%= f.label :add_icon, class: "form-control rounded-0" %>
-    <%= f.file_field :icon, required: true, class: "form-control rounded-0" %>
+     <fieldset class="flex flex-col">
+      <%= f.text_field :name, placeholder: "Category Name", required: true, class: "form-control rounded-0 shadow-none" %>
+    <div class="flex gap-x-2 items-center shadow-none text-bold px-2 py-1 w-full border border-current">
+        <%= f.label :add_icon, class: "form-control rounded-0" %>
+        <i class="fa fa-caret-down text-blue" style="font-size:24px;"></i>
+     </div>
+    <%= f.file_field :icon, required: true, class: "form-control rounded-0 shadow-none w-full border border-current gap-2" %>
     <%= f.hidden_field :author_id, value: current_user.id %>
   </div>
     </fieldset>

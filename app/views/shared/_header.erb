@@ -1,11 +1,9 @@
-<div class="dropdown">
-  <button class="btn btn-outline border-0" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    <i class='fas fa-bars text-white'></i>
+<div class="inline-block text-left">
+  <button type="button" class="" id="dropdownMenuButton1" aria-haspopup="true">
+     <i class="fas fa-bars text-white py-1 bg-blue" style="font-size:24px;"></i>
   </button>
-  <ul class="dropdown-menu rounded-0 bg-color" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Home</a></li>
-    <li><%= link_to "Update profile ", edit_user_registration_path, class: "dropdown-item d-none" %></li>
-    <li><%= link_to "Change password", edit_user_password_path, class: "dropdown-item d-none" %></li>
-    <li><%= button_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+  <ul class="absolute z-10 left-0 pt-2 mt-2 w-40 bg-blue rounded-md shadow-lg hidden" id="dropdownMenu" role="menu" aria-orientation="vertical" aria-labelledby="dropdownMenuButton1">
+    <li><a class="block px-4 py-2 text-sm text-silver hover:bg-gray-100 hover:text-gray-900" href="/groups">Home</a></li>
+    <li><%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "block px-4 py-2 text-sm text-silver hover:text-start hover:bg-midnight hover:w-full hover:text-white", role: "menuitem" %></li>
   </ul>
 </div>
