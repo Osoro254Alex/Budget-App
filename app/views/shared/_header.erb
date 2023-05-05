@@ -2,8 +2,8 @@
   <button class="btn btn-outline border-0" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" onclick="toggleDropdown()">
     <i class="fas fa-bars text-white py-1 bg-blue img" style="font-size:24px;"></i>
   </button>
-  <ul class="dropdown-menu absolute z-10 left-0 pt-2 mt-2 w-40 bg-blue rounded-md shadow-lg" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item px-4 py-2 text-sm text-silver hover:w-full hover:bg-gray-100 hover:text-gray-900" href="#">Home</a></li>
+  <ul class="dropdown-menu absolute z-10 left-4 pt-2 mt-2 w-32 bg-blue rounded-md shadow-lg" aria-labelledby="dropdownMenuButton1">
+    <li><a class="block dropdown-item px-4 py-2 text-sm text-silver hover:bg-gray-100 hover:text-gray-900" href="/groups">Home</a></li>
     <li><%= button_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item px-4 py-2 text-sm text-silver hover:text-start hover:bg-midnight hover:w-full hover:text-white" %></li>
   </ul>
 </div>
