@@ -21,22 +21,10 @@
       </div>
     </main>
     <script>
-      const dropdownMenuButton = document.getElementById('dropdownMenuButton1');
-      const dropdownMenu = document.getElementById('dropdownMenu');
-      dropdownMenuButton.addEventListener('click', function(event) {
-
-        let targetElement = event.target;
-
-        if (dropdownMenu.classList.contains('hidden') && targetElement !== dropdownMenuButton) {
-          dropdownMenu.classList.remove('hidden');
-        } else if (!dropdownMenu.classList.contains('hidden') && !dropdownMenu.contains(targetElement)) {
-          dropdownMenu.classList.add('hidden');
-        }
-
-        dropdownMenuButton.removeEventListener('click', arguments.callee);
-        dropdownMenuButton.addEventListener('click', arguments.callee);
-
-      });
+      function toggleDropdown() {
+      let dropdown = document.querySelector('.dropdown');
+      dropdown.classList.toggle('show-dropdown');
+      }
     </script>
   </body>
 </html>
