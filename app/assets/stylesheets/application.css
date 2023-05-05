@@ -60,6 +60,7 @@
 
 /* Empty line before @keyframes rule */
 @keyframes dropdown {
+  
   from {
     transform: translateY(-100%);
   }
