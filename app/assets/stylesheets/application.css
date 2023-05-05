@@ -37,3 +37,19 @@
   border-radius: 1rem;
   text-align: center;
 }
+
+.dropdown:focus-within .dropdown-menu {
+  display: block;
+  background-color: #3878C2;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: #3878C2;
+}
+
+.show-dropdown {
+display: block;
+}
