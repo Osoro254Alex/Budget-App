@@ -16,7 +16,6 @@ class ExpensesController < ApplicationController
   def create
     @expense = Expense.new(name: params[:name], amount: params[:amount], author_id: params[:author_id])
 
-
     if @expense.save
       group_expense = GroupExpense.new(group_id: params[:group], expense_id: @expense.id)
       group_expense.save

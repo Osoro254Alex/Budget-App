@@ -38,20 +38,20 @@
   text-align: center;
 }
 
-.dropdown:focus-within .dropdown-menu {
-  display: block;
-  background-color: #3878C2;
-  animation-name: dropdown;
-  animation-duration: 0.6s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-}
-
 .dropdown-menu {
   display: none;
   position: absolute;
   z-index: 1;
-  background-color: #3878C2;
+  background-color: #3878c2;
+}
+
+.dropdown:focus-within .dropdown-menu {
+  display: block;
+  background-color: #3878c2;
+  animation-name: dropdown;
+  animation-duration: 0.6s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
 }
 
 .show-dropdown {
@@ -60,9 +60,9 @@
 
 @keyframes dropdown {
   from {
-    transform: translateY(-100%);
+   transform: translateY(-100%);
   }
   to {
-    transform: translateY(0);
+   transform: translateY(0);
   }
 }
