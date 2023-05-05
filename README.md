@@ -67,6 +67,10 @@
 - [Project link](https://github.com/Osoro254Alex/Budget-App)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## :link: Presentation
+- [Presentation](https://www.loom.com/share/61b84b8549fc4796ab774a1b20696951)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- GETTING STARTED -->
 
 ## :computer: Getting Started <a name="getting-started"></a>
