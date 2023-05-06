@@ -151,6 +151,10 @@ If you like this project you can fork it.
 <!-- ACKNOWLEDGEMENTS -->
 
 ## :pray: Acknowledgments <a name="acknowledgements"></a>
+Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
+
+License of the design under The [Creative Commons license](https://creativecommons.org/licenses/by-nc/4.0/).
+
 I would like to thank... <a href="https://www.microverse.org/?gclid=CjwKCAiArY2fBhB9EiwAWqHK6s-2-x4d57Pghz47XT1BgsYuF81ZprM-k-IwzI0_L96nV0SQ93A8ExoCVnQQAvD_BwE" title="planet icons">Microvers for giving me this opportunity to build this project</a>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
