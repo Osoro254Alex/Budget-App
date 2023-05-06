@@ -64,7 +64,7 @@
 <!-- PROJECT LINK-->
 
 ## :link: Project Link <a name="project link"></a>
-- [Project link](https://github.com/Osoro254Alex/Budget-App)
+- [Project link](https://osoro.onrender.com)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## :link: Presentation
