@@ -1,0 +1,70 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+.notice {
+  background-color: #0bf10b;
+  color: #eee;
+  width: 20%;
+  margin: auto;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+#group {
+  padding: 0.2rem;
+  border-radius: 0.4rem;
+  outline: none;
+  text-decoration: none;
+}
+
+.alert {
+  background-color: #fa0808;
+  color: #fff;
+  width: 20%;
+  margin: auto;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: #3878c2;
+}
+
+.dropdown:focus-within .dropdown-menu {
+  display: block;
+  background-color: #3878c2;
+  animation-name: dropdown;
+  animation-duration: 0.6s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+.show-dropdown {
+  display: block;
+}
+
+/* Empty line before @keyframes rule */
+@keyframes dropdown {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}

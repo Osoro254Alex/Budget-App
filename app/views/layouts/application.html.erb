@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BudgetApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="w-full m-0">
+    <%# <p class="notice"><%= notice</p> %>
+    <%# <p class="alert"><%= alert</p>   %>
+    <main class="lg:w-3/5 md:w-4/5 sm:w-full mx-auto">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
+    <script>
+      function toggleDropdown() {
+      let dropdown = document.querySelector('.dropdown');
+      dropdown.classList.toggle('show-dropdown');
+      }
+    </script>
+  </body>
+</html>
